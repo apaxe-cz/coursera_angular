@@ -31,7 +31,7 @@
 			{ name: "cookies", quantity: 2 },
 			{ name: "chips", quantity: 4 },
 			{ name: "milk", quantity: 2 },
-			{ name: "chocolate", quantity: 3 },
+			{ name: "chocolates", quantity: 3 },
 			{ name: "candy", quantity: 1 }
 		];
 		checkOffService.bought = [];
