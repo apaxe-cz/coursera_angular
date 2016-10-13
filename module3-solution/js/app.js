@@ -14,7 +14,6 @@
 		myCtrl.searchTerm = "";
 
 		myCtrl.getMatchedMenuItems = function(){
-			console.log(myCtrl.searchTerm);
 			if(myCtrl.searchTerm.length > 0){
 				MenuSearchService.getMatchedMenuItems(myCtrl.searchTerm)
 				.then(function(result){
@@ -22,6 +21,7 @@
 					myCtrl.foundStatus = myCtrl.found.length != 0;
 				});
 			}else{
+				myCtrl.found = [];
 				myCtrl.foundStatus = false;
 			}
 		};
@@ -41,7 +41,6 @@
 				var foundItems = result.data.menu_items.filter(function(item){
 					return (item.description.toLowerCase().indexOf(searchTerm.toLowerCase())>-1);
 				});
-				console.log(foundItems);
 		    return foundItems;
 			},
 			function(response){
