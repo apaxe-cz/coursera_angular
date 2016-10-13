@@ -21,10 +21,11 @@ li{
   clear:both;
 }
 .loader {
-  display: none;
-  margin-left: 5px;
+  /*display: none;*/
+  margin:15px 5px;
   font-size: 10px;
   float: left;
+  clear:both;
   border-top: 1.1em solid rgba(147, 147, 147, 0.2);
   border-right: 1.1em solid rgba(147, 147, 147, 0.2);
   border-bottom: 1.1em solid rgba(147, 147, 147, 0.2);
