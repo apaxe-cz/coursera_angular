@@ -1,0 +1,11 @@
+ &raquo; <a ui-sref="categories" ui-sref-active="actMenuItem">Categories</a>
+ &raquo; <a ui-sref="items({categoryShortName: $ctrl.categoryData.category.short_name})" ui-sref-active="actMenuItem">
+   {{ $ctrl.categoryData.category.name }} <i>({{ $ctrl.categoryData.category.short_name }})</i>
+ </a>
+<br><br>
+<ul  class="w3-ul catItems">
+  <li ng-repeat="item in $ctrl.categoryData.menu_items">
+    <i>({{ item.id }})</i> <strong>{{ item.name }}</strong>
+    <i class="itemDesc">{{ item.description }}</i>
+  </li>
+</ul>
