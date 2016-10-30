@@ -1,0 +1,18 @@
+<div class="container" ng-if="myinfoCtrl.userInfo">
+<span class="col-sm-12">Name: {{ myinfoCtrl.userInfo.firstName }} {{ myinfoCtrl.userInfo.lastName }}</span>
+<br>
+<span class="col-sm-12">E-mail: {{ myinfoCtrl.userInfo.emailAddress }}</span>
+<br>
+<span class="col-sm-12">Phone: {{ myinfoCtrl.userInfo.phoneNumber }}</span>
+<br><br>
+<span class="col-sm-12">Favorite Dish:</span>
+<br>
+<div class="menu-item-description col-sm-8">
+  <h3 class="menu-item-title">{{myinfoCtrl.userInfo.favoriteDish.name}}</h3>
+  <p class="menu-item-details">{{myinfoCtrl.userInfo.favoriteDish.description}}</p>
+</div>
+<img class="img-responsive col-sm-4" width="250" height="150" ng-src="{{myinfoCtrl.basePath}}/images/{{myinfoCtrl.userInfo.favoriteDish.short_name}}.jpg" alt="{{myinfoCtrl.userInfo.name}}">
+</div>
+<div class="container" ng-if="!myinfoCtrl.userInfo">
+Not Signed Up Yet. <a href="#" ui-sref="user.signup">Sign up Now!</a>
+</div>

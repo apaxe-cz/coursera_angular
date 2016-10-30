@@ -1,0 +1,13 @@
+label{
+  display: inline-block;
+  width: 180px;
+}
+input{
+  color:#000;
+}
+.ng-touched.ng-valid{
+  border:2px solid green;
+}
+.ng-touched.ng-invalid{
+  border:2px solid red;
+}

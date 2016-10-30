@@ -1,0 +1,47 @@
+<form class="container" name="signupForm" novalidate>
+<br>
+
+<label for="">First name: </label>
+<input type="text" name="firstName" ng-model="signupCtrl.userInfo.firstName" required>
+<span ng-if="signupForm.firstName.$error.required && signupForm.firstName.$touched">
+  Insert your first name.
+</span>
+<br>
+
+<label for="">Last name: </label>
+<input type="text" name="lastName" ng-model="signupCtrl.userInfo.lastName" required>
+<span ng-if="signupForm.lastName.$error.required && signupForm.lastName.$touched">
+  Insert your last name.
+</span>
+<br>
+
+<label>E-mail address: </label>
+<input type="email" name="emailAddress" ng-model="signupCtrl.userInfo.emailAddress" required>
+<span ng-if="(signupForm.emailAddress.$error.required || signupForm.emailAddress.$invalid) && signupForm.emailAddress.$touched">
+  Insert your e-mail address.
+</span>
+<br>
+
+<label>Phone number: </label>
+<input type="text" name="phoneNumber" ng-model="signupCtrl.userInfo.phoneNumber" required pattern="([0-9-+ ]+)">
+<span ng-if="(signupForm.phoneNumber.$error.required || signupForm.phoneNumber.$invalid) && signupForm.phoneNumber.$touched">
+  Insert your phone number.
+</span>
+<br>
+
+<label>Favorite dish number: </label>
+<input type="text" name="favoriteDish" ng-model="signupCtrl.userInfo.favoriteDish.short_name" required>
+<span ng-if="signupForm.favoriteDish.$error.required && signupForm.favoriteDish.$touched && !signupCtrl.existingDish">
+  Insert your favorite dish number.
+</span>
+<span ng-if="!signupCtrl.existingDish">No such menu number exists.</span>
+<br><br>
+
+<button ng-disabled="signupForm.$invalid || !signupCtrl.existingDish" ng-click="signupCtrl.submitForm()" class="btn btn-default">Submit</button>
+
+</form>
+<br>
+
+<div class="container" ng-if="signupCtrl.userSaved">
+Your information has been saved.
+</div>
